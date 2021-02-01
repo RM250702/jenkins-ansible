@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("SCM Checkout"){
             steps{
-                 git 'https://github.com/RM250702/ansibleplybook/blob/main/db-playbook'
+                 git 'https://github.com/RM250702/ansibleplybook'
                  
             }
         }
