@@ -9,7 +9,7 @@ pipeline{
         }
         stage('Execute ansible playbook'){
             steps{
-                ansiblePlaybook playbook: test-playbook.yaml
+                ansiblePlaybook credentialsId: '78d491e8-b3c6-4fcf-8f6e-ec456fcd0579', disableHostKeyChecking: true, installation: 'ansible', playbook: 'test-playbook.yaml'
             }
             
         }
