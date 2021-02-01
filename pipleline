@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage("SCM Checkout){
             steps{
-                 git " scm url where ansible is there"
+                 git 'https://github.com/RM250702/ansibleplybook'
                  
             }
         }
