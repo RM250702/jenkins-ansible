@@ -3,13 +3,13 @@ pipeline{
     stages{
         stage("SCM Checkout){
             steps{
-                 git 'https://github.com/RM250702/ansibleplybook'
+                 git 'https://github.com/RM250702/ansibleplybook/blob/main/db-playbook'
                  
             }
         }
         stage('Execute ansible playbook'){
             steps{
-                ansiblePlaybook credentialsID: 'private-key', diableHostKeyChecking: true, installation: 'ansible', inventory: 'variable', playbook: test-playbook.yaml
+                ansiblePlaybook credentialsID: 'private-key', diableHostKeyChecking: true, installation: 'ansible', playbook: test-playbook.yaml
             }
             
         }
