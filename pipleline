@@ -9,7 +9,7 @@ pipeline{
         }
         stage('Execute ansible playbook'){
             steps{
-                ansiblePlaybook credentialsID: 'private-key', diableHostKeyChecking: true, installation: 'ansible', playbook: test-playbook.yaml
+                ansiblePlaybook playbook: test-playbook.yaml
             }
             
         }
