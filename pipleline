@@ -1,0 +1,17 @@
+pipeline{
+    agent any
+    stages{
+        stage("SCM Checkout){
+            steps{
+                 git " scm url where ansible is there"
+                 
+            }
+        }
+        stage('Execute ansible playbook'){
+            steps{
+                ansiblePlaybook credentialsID: 'private-key', diableHostKeyChecking: true, installation: 'ansible', inventory: 'variable', playbook: test-playbook.yaml
+            }
+            
+        }
+    }
+}
